@@ -172,8 +172,11 @@
     </div>
   </div>
 
-  <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
-  <div class="elfsight-app-ca1e359b-d12d-43f5-9dbe-99c520496485" data-elfsight-app-lazy></div>
+<!--   <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+  <div class="elfsight-app-ca1e359b-d12d-43f5-9dbe-99c520496485" data-elfsight-app-lazy></div> -->
+  <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="3e6fa782-1425-413e-9e1a-1241447bdf6e";
+    (function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
+  </script>
 
   <?php require "footer.php"; ?>
 </body>
