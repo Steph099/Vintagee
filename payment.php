@@ -29,19 +29,19 @@
             <div class="input-field col s6">
               <i class="material-icons prefix">account_circle</i>
               <input id="name" type="text" placeholder="XXX XXX XXX" name="card_name" class="validate white-text">
-              <label class="active cyan-text" for="name">Name on Card</label>
-              <span class="helper-text grey-text" data-error="CardHolder Name" data-success="CardHolder Name"></span>
+              <label class="active cyan-text" for="name">Name</label>
+              <span class="helper-text grey-text" data-error="Name" data-success="Name"></span>
             </div>
 
-            <div class="input-field col s6">
+            <!-- <div class="input-field col s6">
               <i class="material-icons prefix">badge</i>
               <input placeholder="0000 0000 0000 0000" id="card_number" name="card_number" type="text" class="validate white-text">
               <label class="active cyan-text" for="card_number">Card Number</label>
               <span class="helper-text grey-text" data-error="Invalid Card Number" data-success="Valid Card Number"></span>
-            </div>
+            </div> -->
           </div>
 
-          <div class="row">
+          <!-- <div class="row">
             <div class="input-field col s4">
               <i class="material-icons prefix">date_range</i>
               <input id="exp_month" type="tel" name="exp_month" class="validate white-text">
@@ -60,7 +60,7 @@
               <label for="cvv">CVV</label>
               <span class="helper-text grey-text" data-error="Invalid CVV" data-success="Valid CVV"></span>
             </div>
-          </div>
+          </div> -->
 
           <div class="row">
             <div class="input-field">
@@ -105,9 +105,9 @@
           <button type="submit" name="payment" class="btn" style="margin-bottom: 20px;">Confirm Payment</button>
         </div>
         <div class="col s4">
-          <div class="rounded-card tint-glass-black" style="margin-top: 100px;">
+          <!-- <div class="rounded-card tint-glass-black" style="margin-top: 100px;">
             <div class="card-content">
-              <label class="bold white-text" style="font-size: 24px;">Accepted Cards</label>
+               <label class="bold white-text" style="font-size: 24px;">Accepted Cards</label>
               <div style= 'margin-bottom: 20px; padding: 7px 0; font-size: 40px;'>
                 <i class="fa fa-cc-visa payable-cards" style="color: navy;"></i>
                 <i class="fa fa-cc-amex payable-cards" style="color: blue;"></i>
@@ -115,7 +115,7 @@
                 <i class="fa fa-cc-discover payable-cards" style="color: orange;"></i>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </form>
     </div>
@@ -123,23 +123,18 @@
 </body>
 
 <?php
-  function EmptyInputPayment($name, $number, $month, $year, $cvv, $address, $phone, $state, $zip)
-  { return empty($name) || (empty($number)) || (empty($month)) || (empty($year)) || (empty($cvv)) 
-    || (empty($address)) || (empty($phone)) || (empty($state)) || (empty($zip)); }
+  function EmptyInputPayment($name, $address, $phone, $state, $zip)
+  { return empty($name) || (empty($address)) || (empty($phone)) || (empty($state)) || (empty($zip)); }
 
   if (isset($_POST["payment"])) 
   {
     $name = $_POST["card_name"];
-    $number = $_POST["card_number"];
-    $month = $_POST["exp_month"];
-    $year = $_POST["exp_year"];
-    $cvv = $_POST["cvv"];
     $address = $_POST["address"];
     $phone = $_POST["phone"];
     $state = $_POST["state"];
     $zip = $_POST["zip"];
 
-    if (EmptyInputPayment($name, $number, $month, $year, $cvv, $address, $phone, $state, $zip))
+    if (EmptyInputPayment($name, $address, $phone, $state, $zip))
     {
       $orderID = $_GET["order_id"];
       $memberID = $_GET["member_id"];
