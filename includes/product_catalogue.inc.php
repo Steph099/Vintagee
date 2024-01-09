@@ -94,7 +94,7 @@
                       $reviews = $item->GetReviews();
                       $reviewCount = count($reviews);
 
-                      if ($intRating >= 10) {
+                      if ($intRating) {
                         $intRating = $intRating / $reviewCount;
                         $intRating = number_format((float)$intRating, 2, '.', '');
                         $avgRatings = $intRating * 20;
